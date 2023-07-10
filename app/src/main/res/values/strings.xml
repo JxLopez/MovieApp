@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="subtitle_movie_list_fragment">What do you want to watch?</string>
+    <string name="your_rated">Your rated: %s</string>
+
+    <string name="title_profile">Profile</string>
+    <string name="title_location">Your locations</string>
+    <string name="title_media">Media</string>
+
+    <!-- Location Fragment -->
+    <string name="sharing_location_title">Location</string>
+    <string name="permission_location">You need accept location permissions to use this section</string>
+    <string name="sharing_location_description">You are sharing your location</string>
+    <string name="sharing_location_share_location">Share location</string>
+    <string name="start_location">Start</string>
+    <string name="stop_location">Stop</string>
+
+    <!-- Media Fragment -->
+    <string name="subtitle_media_fragment">Upload a photo</string>
+    <string name="select_image_media_fragment">Select image</string>
+    <string name="or_media_fragment">or</string>
+    <string name="open_camera_media_fragment">Open camera &amp; Take photo</string>
+    <string name="upload_media_fragment">Upload</string>
+
+</resources>

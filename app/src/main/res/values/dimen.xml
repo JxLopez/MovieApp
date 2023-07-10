@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_clean">0dp</dimen>
+    <dimen name="space_minimun">1dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+    <dimen name="space_extra_large">32dp</dimen>
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_minimun">5dp</dimen>
+    <dimen name="line_spacing">5dp</dimen>
+    <dimen name="size_heigth_app_bar">150dp</dimen>
+    <dimen name="size_width_card">200dp</dimen>
+    <dimen name="size_heigth_card">240dp</dimen>
+    <dimen name="card_elevation">3dp</dimen>
+    <dimen name="text_size_big">32sp</dimen>
+    <dimen name="text_size_medium">20sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="dimen_55dp">55dp</dimen>
+
+    <dimen name="dimen_10dp">10dp</dimen>
+
+
+</resources>
