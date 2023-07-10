@@ -2,12 +2,22 @@
     <string name="app_name">MovieApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="subtitle_movie_list_fragment">What do you want to watch?</string>
-    <string name="your_rated">Your rated: %s</string>
 
+    <string name="title_movies">Movies</string>
     <string name="title_profile">Profile</string>
     <string name="title_location">Your locations</string>
     <string name="title_media">Media</string>
+
+    <!-- Movies Fragment -->
+    <string name="subtitle_movie_list_fragment">What do you want to watch?</string>
+    <string name="trending_list_fragment">Trending</string>
+    <string name="popular_list_fragment">Popular</string>
+    <string name="top_rated_list_fragment">Top Rated</string>
+    <string name="recommended_list_fragment">Recommended</string>
+
+    <!-- Profile Fragment -->
+    <string name="your_rated">Your rated: %s</string>
+    <string name="rated_movies_list_fragment">Rated movies</string>
 
     <!-- Location Fragment -->
     <string name="sharing_location_title">Location</string>

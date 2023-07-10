@@ -1,15 +1,11 @@
 package com.jxlopez.movieapp.ui.profile
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jxlopez.movieapp.data.repository.LocationRepository
 import com.jxlopez.movieapp.data.repository.ProfileRepository
-import com.jxlopez.movieapp.model.MovieItem
 import com.jxlopez.movieapp.model.MovieRatedByUserItem
 import com.jxlopez.movieapp.model.ProfileItem
-import com.jxlopez.movieapp.ui.MovieViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

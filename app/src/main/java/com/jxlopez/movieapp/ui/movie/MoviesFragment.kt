@@ -1,4 +1,4 @@
-package com.jxlopez.movieapp.ui
+package com.jxlopez.movieapp.ui.movie
 
 import android.os.Bundle
 import android.util.Log

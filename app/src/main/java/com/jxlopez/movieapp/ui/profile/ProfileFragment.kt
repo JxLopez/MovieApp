@@ -59,8 +59,9 @@ class ProfileFragment : Fragment() {
             is ProfileViewState.Profile -> {
                 binding.ivProfile.loadImageUrl("${Constants.BASE_POSTER_IMAGE_URL}${state.profile?.avatar}")
                 binding.tvName.text = state.profile?.name
+                binding.tvUserName.text = "@${state.profile?.username}"
             }
-            null -> TODO()
+            null -> {}
         }
     }
 }

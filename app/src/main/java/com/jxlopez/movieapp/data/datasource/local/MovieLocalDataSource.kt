@@ -3,7 +3,6 @@ package com.jxlopez.movieapp.data.datasource.local
 import androidx.paging.PagingSource
 import com.jxlopez.movieapp.data.db.movies.entities.MovieEntity
 import com.jxlopez.movieapp.data.db.movies.entities.MovieTrendingEntity
-import com.jxlopez.movieapp.ui.MovieViewState
 
 interface MovieLocalDataSource {
     suspend fun insertAll(movies: List<MovieEntity>)

@@ -36,24 +36,20 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvLocation"
+                style="@style/Text.Subtitle.Bold.Black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginEnd="@dimen/margin_default"
-                android:textColor="@color/black"
-                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/contentBackdrop"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvDate"
+                style="@style/Text.Subtitle.Bold.Black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginTop="@dimen/margin_default"
                 android:layout_marginEnd="@dimen/margin_default"
-                android:textColor="@color/black"
-                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/contentBackdrop"/>
 

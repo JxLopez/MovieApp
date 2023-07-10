@@ -14,7 +14,6 @@ import com.jxlopez.movieapp.data.db.movies.entities.MovieTrendingEntity
 import com.jxlopez.movieapp.data.db.movies.entities.ProfileEntity
 import com.jxlopez.movieapp.data.db.movies.entities.RemoteKeysPopularEntity
 import com.jxlopez.movieapp.data.db.movies.entities.RemoteKeysTopRatedEntity
-import com.jxlopez.movieapp.ui.MovieViewState
 import com.jxlopez.movieapp.util.Constants
 
 @Database(

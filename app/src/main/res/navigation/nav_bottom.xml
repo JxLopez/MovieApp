@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.jxlopez.movieapp.ui.MoviesFragment"
+        android:name="com.jxlopez.movieapp.ui.movie.MoviesFragment"
         tools:layout="@layout/fragment_movies">
 
 

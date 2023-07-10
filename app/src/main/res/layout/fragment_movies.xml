@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/black"
 xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context=".ui.MoviesFragment">
+tools:context=".ui.movie.MoviesFragment">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -29,19 +29,11 @@ tools:context=".ui.MoviesFragment">
             app:layout_constraintStart_toStartOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvTitleWelcome"
+                style="@style/Text.Subtitle.Bold"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/subtitle_movie_list_fragment"
-                android:textSize="@dimen/text_size_big"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginStart="@dimen/margin_default"
-                android:layout_marginEnd="@dimen/margin_default"
-                android:layout_marginTop="@dimen/margin_default"
-                android:layout_marginBottom="@dimen/space_medium"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/title_movies" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -54,11 +46,24 @@ tools:context=".ui.MoviesFragment">
         app:layout_constraintTop_toBottomOf="@+id/appbar"
         app:layout_constraintStart_toStartOf="parent">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleWelcome"
+            style="@style/Text.Title.Bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_movie_list_fragment"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/space_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contentBackdrop"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleWelcome"
             app:layout_constraintStart_toStartOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -85,18 +90,17 @@ tools:context=".ui.MoviesFragment">
                 android:textColor="@color/black"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="Trending"
+                android:text="@string/trending_list_fragment"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTitleMovieTrending"
+                style="@style/Text.Title.Bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/white"
                 android:layout_marginStart="@dimen/margin_default"
                 android:layout_marginEnd="@dimen/margin_default"
                 android:layout_marginTop="@dimen/margin_default"
@@ -162,15 +166,13 @@ tools:context=".ui.MoviesFragment">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/titlePopular"
+            style="@style/Text.Subtitle.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Popular"
-            android:textStyle="bold"
+            android:text="@string/popular_list_fragment"
             android:layout_marginTop="16dp"
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginEnd="@dimen/margin_default"
-            android:textColor="@color/white"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contentBackdrop"/>
 
@@ -183,15 +185,13 @@ tools:context=".ui.MoviesFragment">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/titleTopRated"
+            style="@style/Text.Subtitle.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Top rated"
+            android:text="@string/top_rated_list_fragment"
             android:layout_marginTop="16dp"
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginEnd="@dimen/margin_default"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvMoviesPopular"/>
 
@@ -204,15 +204,13 @@ tools:context=".ui.MoviesFragment">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/titleRecommend"
+            style="@style/Text.Subtitle.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recommended"
+            android:text="@string/recommended_list_fragment"
             android:layout_marginTop="16dp"
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginEnd="@dimen/margin_default"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvMoviesTopRated"/>
 

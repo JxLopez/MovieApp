@@ -18,13 +18,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Text.Subtitle.Bold"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/title_location"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="@string/title_location" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -55,17 +53,19 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvStatusLocation"
+                style="@style/Text.Subtitle.Bold.Black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_default"
-                android:text="@string/sharing_location_share_location"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:text="@string/sharing_location_share_location" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnStartLocation"
+                style="@style/Button.IconStyle.Secondary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_minimun"
+                android:layout_marginBottom="@dimen/margin_minimun"
                 android:textAllCaps="false"
                 android:text="@string/start_location"/>
 
