@@ -104,7 +104,7 @@ class LocationService : LifecycleService() {
         }
     }
 
-    val locationCallback = object : LocationCallback() {
+    private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(result: LocationResult?) {
             super.onLocationResult(result)
             if(isTracking.value!!) {

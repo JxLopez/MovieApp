@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jxlopez.movieapp.R
 import com.jxlopez.movieapp.databinding.MovieRatedUserCardItemBinding
-import com.jxlopez.movieapp.databinding.MovieRecommededCardItemBinding
 import com.jxlopez.movieapp.model.MovieRatedByUserItem
 import com.jxlopez.movieapp.util.Constants
 import com.jxlopez.movieapp.util.extensions.convertDecimal

@@ -12,6 +12,9 @@ object Constants {
     object FirebaseFirestore {
         const val COLLECTION_LOCATION_PATH = "locations"
         const val COLLECTION_IMAGES_PATH = "images"
+
+        const val FIELD_GEOPOINT = "geoPoint"
+        const val FIELD_DATE = "date"
     }
 
     object LocationService {

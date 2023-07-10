@@ -22,7 +22,6 @@ class UploadRepositoryImpl : UploadRepository {
                     if (!task.isSuccessful) {
                         throw task.exception!!
                     }
-                    // Request the public download URL
                     photoRef.downloadUrl
                 }
                 .addOnSuccessListener { block?.invoke(Result.Success(it), 100) }

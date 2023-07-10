@@ -1,6 +1,5 @@
 package com.jxlopez.movieapp.ui.location
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -8,8 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jxlopez.movieapp.databinding.LocationCardItemBinding
 import com.jxlopez.movieapp.model.LocationUserItem
-import com.jxlopez.movieapp.util.extensions.convertISO8601
-import com.jxlopez.movieapp.util.extensions.customFormat
 import com.jxlopez.movieapp.util.extensions.toHumanReadableDateTime
 
 class LocationAdapter:
@@ -29,7 +26,6 @@ class LocationAdapter:
         ): Boolean {
             return false
         }
-
     }
 
     private val differ = AsyncListDiffer(this, diffCallback)

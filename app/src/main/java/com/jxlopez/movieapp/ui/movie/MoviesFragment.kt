@@ -91,8 +91,6 @@ class MoviesFragment : Fragment() {
                     binding.tvTitleMovieTrending.text = state.movieTrending.title
                     binding.tvVoteAverage.text = "${state.movieTrending.voteAverage.convertDecimal()}"
                     binding.tvPopularity.text = "${state.movieTrending.popularity.toInt()}"
-                } else {
-                    Log.e("trending:::","ocultar componente")
                 }
             }
             null -> {}

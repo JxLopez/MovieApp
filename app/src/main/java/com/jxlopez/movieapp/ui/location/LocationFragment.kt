@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -77,7 +76,6 @@ class LocationFragment : Fragment(), EasyPermissions.PermissionCallbacks {
         requestPermissions()
         setObservers()
         setListeners()
-        Log.e("isTrackingInti::","${LocationService.isTracking.value}")
         updateTracking(LocationService.isTracking.value == true)
     }
 

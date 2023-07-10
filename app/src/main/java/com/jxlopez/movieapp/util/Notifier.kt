@@ -25,7 +25,6 @@ object Notifier {
         @DrawableRes var smallIcon: Int? = null
     )
 
-
     fun show(
         context: Context,
         init: NotificationData.() -> Unit
@@ -33,9 +32,7 @@ object Notifier {
 
         val data = NotificationData()
         data.init()
-
         val notificationId = data.notificationId ?: NOTIFICATION_TAG.hashCode()
-        // Remove any notification with the same id.
         this.dismissNotification(context, notificationId)
 
         createDefaultChannel()
@@ -90,21 +87,16 @@ object Notifier {
         data: NotificationData
     ): NotificationCompat.Builder {
         return NotificationCompat.Builder(context, channelId ?: CHANNEL_ID_DEFAULT)
-
-            // Set appropriate defaults for the notification light, sound,
-            // and vibration.
             .setDefaults(Notification.DEFAULT_ALL)
             .setSmallIcon(data.smallIcon ?: R.drawable.ic_backup_24)
             .setContentTitle(data.contentTitle)
             .setContentText(data.contentText)
-            // All fields below this line are optional.
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setTicker(data.contentTitle)
             .setContentIntent(data.pendingIntent)
     }
 
     private fun createDefaultChannel() {
-        // Notification channel is added since android Oreo.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID_DEFAULT,

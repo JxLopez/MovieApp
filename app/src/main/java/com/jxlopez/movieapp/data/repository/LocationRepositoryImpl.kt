@@ -8,6 +8,8 @@ import com.google.firebase.firestore.Source
 import com.jxlopez.movieapp.data.repository.request.LocationUserRequest
 import com.jxlopez.movieapp.model.LocationUserItem
 import com.jxlopez.movieapp.util.Constants
+import com.jxlopez.movieapp.util.Constants.FirebaseFirestore.FIELD_DATE
+import com.jxlopez.movieapp.util.Constants.FirebaseFirestore.FIELD_GEOPOINT
 import kotlinx.coroutines.tasks.await
 import java.util.Date
 import javax.inject.Inject
@@ -32,15 +34,14 @@ class LocationRepositoryImpl @Inject constructor(
     override suspend fun getLocations(): List<LocationUserItem> {
         val locationRef =
             firestore.collection(Constants.FirebaseFirestore.COLLECTION_LOCATION_PATH)
-        //val source = Source.CACHE
         val locations = locationRef.get().await()
         if(!locations.isEmpty) {
             return locations.documents.map {
-                val geoPoint = it.getGeoPoint("geoPoint")
+                val geoPoint = it.getGeoPoint(FIELD_GEOPOINT)
                 LocationUserItem(
                     geoPoint?.latitude ?: 0.0,
                     geoPoint?.longitude ?: 0.0,
-                    it.getTimestamp("date")
+                    it.getTimestamp(FIELD_DATE)
                 )
             }
         }

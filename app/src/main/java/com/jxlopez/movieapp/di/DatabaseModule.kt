@@ -68,8 +68,4 @@ internal object DatabaseModule {
     fun provideRemoteKeysMovieTopRatedDao(movieDataBase: MovieDataBase): RemoteKeysTopRatedDao {
         return movieDataBase.remoteKeysTopRatedDao
     }
-
-    /*@Provides
-    @Singleton
-    fun provideJsonConverter(moshi: Moshi): JsonConverter = JsonConverter(moshi)*/
 }

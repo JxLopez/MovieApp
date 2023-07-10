@@ -1,6 +1,5 @@
 package com.jxlopez.movieapp.ui.movie
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -27,7 +26,6 @@ class MoviesViewModel @Inject constructor(
     fun getMovieTrending() {
         viewModelScope.launch {
             movieRepository.getMovieTrending().collect {
-                Log.e("getMovieTrendingVM:::","$it")
                 _viewState.value = MovieViewState.MovieTrending(it)
                 movieId.value = it?.id
                 getMoviesRecommended()
@@ -52,94 +50,8 @@ class MoviesViewModel @Inject constructor(
             }
         }
     }
-
-    /*init {
-        val actionStateFlow = MutableSharedFlow<UiAction>()
-        val getListMoviesPopular = actionStateFlow
-            .filterIsInstance<UiAction.GetListMoviesPopular>()
-            .distinctUntilChanged()
-            .onStart { emit(UiAction.GetListMoviesPopular) }
-        val listScrolled = actionStateFlow
-            .filterIsInstance<UiAction.Scroll>()
-            .distinctUntilChanged()
-            // This is shared to keep the flow "hot" while caching the last query scrolled,
-            // otherwise each flatMapLatest invocation would lose the last query scrolled,
-            .shareIn(
-                scope = viewModelScope,
-                started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5000),
-                replay = 1
-            )
-            .onStart { emit(UiAction.Scroll) }
-
-        pagingDataFlow = getListMoviesPopular
-            .flatMapLatest { getMoviesPopular2() }
-            .cachedIn(viewModelScope)
-
-        state = combine(
-            getListMoviesPopular,
-            listScrolled,
-            ::Pair
-        ).map { (search, scroll) ->
-            UiState(
-                // If the search query matches the scroll query, the user has scrolled
-                hasNotScrolledForCurrentSearch = false
-            )
-        }
-            .stateIn(
-                scope = viewModelScope,
-                started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5000),
-                initialValue = UiState()
-            )
-
-        accept = { action ->
-            viewModelScope.launch { actionStateFlow.emit(action) }
-        }
-    }
-
-    private fun getMoviesPopular2(): Flow<PagingData<UiModel>> =
-        movieRepository.getMoviesPopular()
-            .map { pagingData -> pagingData.map { UiModel.MovieItem(it) } }
-            /*.map {
-                it.insertSeparators { before, after ->
-                    if (after == null) {
-                        // we're at the end of the list
-                        return@insertSeparators null
-                    }
-
-                    if (before == null) {
-                        // we're at the beginning of the list
-                        return@insertSeparators UiModel.SeparatorItem("${after.roundedStarCount}0.000+ stars")
-                    }
-                    // check between 2 items
-                    if (before.roundedStarCount > after.roundedStarCount) {
-                        if (after.roundedStarCount >= 1) {
-                            UiModel.SeparatorItem("${after.roundedStarCount}0.000+ stars")
-                        } else {
-                            UiModel.SeparatorItem("< 10.000+ stars")
-                        }
-                    } else {
-                        // no separator
-                        null
-                    }
-                }
-            }*/
-
-     */
 }
 
-/*sealed class UiAction {
-    object GetListMoviesPopular: UiAction()
-    object Scroll: UiAction()
-}
-
-data class UiState(
-    val hasNotScrolledForCurrentSearch: Boolean = false
-)
-
-sealed class UiModel {
-    data class MovieItem(val movieEntity: MovieEntity) : UiModel()
-    data class SeparatorItem(val description: String) : UiModel()
-}*/
 sealed class MovieViewState {
     object Loading: MovieViewState()
     class MovieTrending(val movieTrending: MovieItem?) : MovieViewState()

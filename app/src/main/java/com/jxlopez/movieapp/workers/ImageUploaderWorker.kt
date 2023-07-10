@@ -59,9 +59,6 @@ class ImageUploaderWorker @Inject constructor(
         }
     }
 
-    /**
-     * Show notification with a progress bar.
-     */
     private fun showProgressNotification(caption: String, percent: Int) {
         Notifier
             .progressable(
@@ -75,11 +72,7 @@ class ImageUploaderWorker @Inject constructor(
             }
     }
 
-    /**
-     * This dismisses any shown progress notification, then
-     */
     private fun showUploadFinishedNotification(downloadUrl: Uri?) {
-        // Hide the progress notification
         Notifier
             .dismissNotification(context, title.hashCode())
 
@@ -88,8 +81,6 @@ class ImageUploaderWorker @Inject constructor(
         val caption = context.getString(
             R.string.error_media_fragment
         )
-
-        // Make Intent to MainActivity
         val intent = Intent(applicationContext, MainActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
 
