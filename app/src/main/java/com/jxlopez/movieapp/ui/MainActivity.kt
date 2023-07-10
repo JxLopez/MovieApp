@@ -10,6 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jxlopez.movieapp.R
 import com.jxlopez.movieapp.databinding.ActivityMainBinding
 import com.jxlopez.movieapp.util.Constants.LocationService.ACTION_SHOW_LOCATION_FRAGMENT
+import com.jxlopez.movieapp.util.Constants.UploadWorker.ACTION_SHOW_UPLOAD_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,8 +35,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToTrackingFragmentIfNeeded(intent: Intent?) {
-        if(intent?.action == ACTION_SHOW_LOCATION_FRAGMENT) {
-            navHostFragment!!.findNavController().navigate(R.id.action_global_locationFragment)
+        when(intent?.action) {
+            ACTION_SHOW_LOCATION_FRAGMENT -> {
+                navHostFragment!!.findNavController().navigate(R.id.action_global_locationFragment)
+            }
+            ACTION_SHOW_UPLOAD_FRAGMENT -> {
+                navHostFragment!!.findNavController().navigate(R.id.action_global_mediaFragment)
+            }
         }
     }
 }

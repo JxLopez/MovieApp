@@ -27,4 +27,10 @@ object Constants {
         const val NOTIFICATION_CHANNEL_NAME = "Tracking"
         const val NOTIFICATION_ID = 1
     }
+
+    object UploadWorker {
+        const val ACTION_SHOW_UPLOAD_FRAGMENT = "ACTION_SHOW_UPLOAD_FRAGMENT"
+        const val TAG_OUTPUT = "OUTPUT"
+        const val IMAGE_CURRENT_WORK_NAME = "image_current_work"
+    }
 }

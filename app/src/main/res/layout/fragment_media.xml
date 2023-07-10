@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.MediaFragment">
+    tools:context=".ui.media.MediaFragment">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -72,6 +72,7 @@
 
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llContentSelectImage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -96,6 +97,29 @@
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivImageLoaded"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/line_spacing"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/animationUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/uploading" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -143,6 +167,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTakePicture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/open_camera_media_fragment"
@@ -173,6 +198,7 @@
         style="@style/Button.IconStyle.Primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:text="@string/upload_media_fragment"
         android:layout_marginStart="@dimen/space_large"
         android:layout_marginBottom="@dimen/space_extra_large"

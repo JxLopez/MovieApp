@@ -6,6 +6,7 @@ import com.google.firebase.firestore.LocalCacheSettings
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.firestore.ktx.memoryCacheSettings
 import com.google.firebase.firestore.ktx.persistentCacheSettings
+import com.google.firebase.storage.FirebaseStorage
 import com.jxlopez.movieapp.data.api.ApiService
 import com.jxlopez.movieapp.data.datasource.local.MovieLocalDataSource
 import com.jxlopez.movieapp.data.datasource.local.MovieLocalDataSourceImpl
@@ -23,6 +24,8 @@ import com.jxlopez.movieapp.data.repository.MovieRepository
 import com.jxlopez.movieapp.data.repository.MovieRepositoryImpl
 import com.jxlopez.movieapp.data.repository.ProfileRepository
 import com.jxlopez.movieapp.data.repository.ProfileRepositoryImpl
+import com.jxlopez.movieapp.data.repository.upload.UploadRepository
+import com.jxlopez.movieapp.data.repository.upload.UploadRepositoryImpl
 import com.jxlopez.movieapp.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -116,4 +119,8 @@ object AppModule {
         db.firestoreSettings = settings
         return db
     }
+
+    @Singleton
+    @Provides
+    fun provideFirebaseStorage(): FirebaseStorage = FirebaseStorage.getInstance()
 }

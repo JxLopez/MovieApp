@@ -23,5 +23,7 @@
     <string name="or_media_fragment">or</string>
     <string name="open_camera_media_fragment">Open camera &amp; Take photo</string>
     <string name="upload_media_fragment">Upload</string>
+    <string name="uploading_media_fragment">Uploading</string>
+    <string name="error_media_fragment">Error uploading image</string>
 
 </resources>

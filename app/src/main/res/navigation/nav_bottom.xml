@@ -9,6 +9,10 @@
         app:destination="@id/locationFragment"
         app:launchSingleTop="true" />
 
+    <action android:id="@+id/action_global_mediaFragment"
+        app:destination="@id/mediaFragment"
+        app:launchSingleTop="true" />
+
     <fragment
         android:id="@+id/moviesFragment"
         android:name="com.jxlopez.movieapp.ui.MoviesFragment"
@@ -29,7 +33,7 @@
         tools:layout="@layout/fragment_location" />
     <fragment
         android:id="@+id/mediaFragment"
-        android:name="com.jxlopez.movieapp.ui.MediaFragment"
+        android:name="com.jxlopez.movieapp.ui.media.MediaFragment"
         android:label="fragment_media"
         tools:layout="@layout/fragment_media" />
 
