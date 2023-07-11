@@ -46,19 +46,33 @@ Dialog encargado de mostrar los errores que ocurren dentro de la app, contiene u
 
 # Tecnologías
 Arquitectura MVVM: Es una arquitectura de software que elimina el estrecho acoplamiento entre los componentes. Lo más importante, en esta arquitectura, los hijos no tienen la referencia directa al padre, solo tienen la referencia por observables.
+
 Android KTX: Conjunto de extensiones de Kotlin que se incluyen con Android Jetpack y otras bibliotecas de Android
+
 AndroidX: reemplazan por completo la biblioteca de compatibilidad, ya que proporcionan paridad de funciones y bibliotecas nuevas.
-Ciclo de vida: Realice acciones en respuesta a un cambio en el estado del ciclo de vida de otro componente, como actividades y fragmentos.
+
+Lifecycle: Realice acciones en respuesta a un cambio en el estado del ciclo de vida de otro componente, como actividades y fragmentos.
+
 Room: Proporciona una capa de abstracción sobre SQLite que se utiliza para el almacenamiento en caché de datos sin conexión.
+
 ViewModel: Diseñado para almacenar y administrar datos relacionados con la interfaz de usuario teniendo en cuenta el ciclo de vida.
-Retrofit:Es un cliente HTTP con seguridad de tipo y admite corrutinas listas para usar.
+
+Retrofit: Es un cliente HTTP con seguridad de tipo y admite corrutinas listas para usar.
+
 Lottie: Lottie es una biblioteca que analiza las animaciones de Adobe After Effects exportadas como json con Bodymovin y las renderiza de forma nativa en dispositivos móviles y en la web.
+
 Gson: JSON Parser, utilizado para analizar solicitudes en la capa de datos para Entidades y comprende los parámetros predeterminados y no anulables de Kotlin.
+
 OkHttp Logging Interceptor: registra datos de solicitud y respuesta HTTP.
+
 Corrutinas - Compatibilidad con la biblioteca para corrutinas.
+
 Flow: los flujos se crean sobre corrutinas y pueden proporcionar múltiples valores. Un flujo es conceptualmente un flujo de datos que se puede calcular de forma asíncrona.
+
 Hilt: Proporciona una forma estándar de incorporar la inyección de dependencia de Dagger en una aplicación de Android.
+
 WorkManager: Es una biblioteca de Android que ejecuta en segundo plano procesos diferibles cuando se cumplen restricciones del trabajo.
+
 Paging3: Ayuda a cargar y mostrar páginas de datos de un conjunto de datos más grande desde el almacenamiento local o la red
 
 # Estructura del proyecto
