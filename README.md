@@ -9,6 +9,8 @@ Movie App te ayudará a buscar las mejores películas.
 # Pantallas
 ## Lista de películas
 Muestra las películas por más populares, más calificadas y recomendadas, se añadió un apartado "Tendencias". Esta información se consume desde el API de TmDb y se guarda de manera local, esto con el fin de que si no se cuenta con conexión a internet se pueda seguir viendo información.
+
+
 <img width="337" alt="image" src="https://github.com/JxLopez/MovieApp/assets/5014603/b1ba7d5f-96dc-4753-aa2e-90beabbcb522">
 
 ## Perfil
