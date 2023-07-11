@@ -15,14 +15,20 @@ Muestra las películas por más populares, más calificadas y recomendadas, se a
 
 ## Perfil
 Muestra la información del usuario como es su foto, nombre, username y la lista de películas calificadas. Esta información se consume desde el API de TmDb y se guarda de manera local.
+
+
 <img width="337" alt="image" src="https://github.com/JxLopez/MovieApp/assets/5014603/967a998c-8fb5-4b8e-8318-1d9cd464f380">
 
 ## Ubicaciones
 Consulta en Firestore las ubicaciones enviadas por el usuario cada 5 minutos.
+
+
 <img width="337" alt="image" src="https://github.com/JxLopez/MovieApp/assets/5014603/869dd2f9-60a9-46a8-8c78-b9e3ba922114">
 
 ## Media
 Sección donde podemos subir imágenes y las guarda en Firebase Storage, se usa WorkManager para subir en segundo plano y bloquear el uso de la app. Al momento de estar subiendo llas imágenes muestra una animación que se ejecuta con Lottie.
+
+
 <img width="337" alt="image" src="https://github.com/JxLopez/MovieApp/assets/5014603/ab4f25b5-bebc-42f9-86fc-d929d3261cc0">
 
 ## Error
