@@ -25,6 +25,7 @@ Sección donde podemos subir imágenes y las guarda en Firebase Storage, se usa 
 
 ## Error
 Dialog encargado de mostrar los errores que ocurren dentro de la app, contiene una animación que se ejecuta con Lottie.
+
 <img width="258" alt="image" src="https://github.com/JxLopez/MovieApp/assets/5014603/213a7bd2-d51d-4a6a-8ff0-974168c765dc">
 
 ## Firestore
