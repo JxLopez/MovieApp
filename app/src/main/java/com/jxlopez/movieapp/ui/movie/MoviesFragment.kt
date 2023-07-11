@@ -1,8 +1,6 @@
 package com.jxlopez.movieapp.ui.movie
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +9,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.jxlopez.movieapp.R
 import com.jxlopez.movieapp.databinding.FragmentMoviesBinding
 import com.jxlopez.movieapp.ui.adapter.MoviePopularAdapter
 import com.jxlopez.movieapp.ui.adapter.MovieRecommendedAdapter
 import com.jxlopez.movieapp.ui.adapter.MovieTopRatedAdapter
 import com.jxlopez.movieapp.util.Constants
+import com.jxlopez.movieapp.util.components.BaseFragment
 import com.jxlopez.movieapp.util.extensions.convertDecimal
 import com.jxlopez.movieapp.util.extensions.loadImageUrl
 import com.jxlopez.movieapp.util.extensions.observe
@@ -25,7 +25,7 @@ import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MoviesFragment : Fragment() {
+class MoviesFragment : BaseFragment() {
     private lateinit var binding: FragmentMoviesBinding
     private val viewModel: MoviesViewModel by viewModels()
     private val movieAdapter by lazy {
@@ -83,7 +83,9 @@ class MoviesFragment : Fragment() {
 
     private fun onViewState(state: MovieViewState?) {
         when(state) {
-            is MovieViewState.ErrorTrending -> {}
+            is MovieViewState.ErrorTrending -> {
+                showError(state.error)
+            }
             MovieViewState.Loading -> {}
             is MovieViewState.MovieTrending -> {
                 if(state.movieTrending != null) {
@@ -91,7 +93,10 @@ class MoviesFragment : Fragment() {
                     binding.tvTitleMovieTrending.text = state.movieTrending.title
                     binding.tvVoteAverage.text = "${state.movieTrending.voteAverage.convertDecimal()}"
                     binding.tvPopularity.text = "${state.movieTrending.popularity.toInt()}"
+                } else {
+                    showError(getString(R.string.message_error))
                 }
+
             }
             null -> {}
             is MovieViewState.MovieRecommend -> {

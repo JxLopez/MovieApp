@@ -19,6 +19,8 @@
 
     <dimen name="dimen_10dp">10dp</dimen>
 
+    <dimen name="height_header_content">300dp</dimen>
+
     <dimen name="card_width_general">130dp</dimen>
     <dimen name="card_height_general">195dp</dimen>
 

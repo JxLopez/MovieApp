@@ -1,7 +1,6 @@
 package com.jxlopez.movieapp.ui.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,16 +8,18 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
+import com.jxlopez.movieapp.R
 import com.jxlopez.movieapp.databinding.FragmentProfileBinding
 import com.jxlopez.movieapp.ui.adapter.MovieRatedUserAdapter
 import com.jxlopez.movieapp.util.Constants
+import com.jxlopez.movieapp.util.components.BaseFragment
 import com.jxlopez.movieapp.util.extensions.loadImageUrl
 import com.jxlopez.movieapp.util.extensions.observe
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.abs
 
 @AndroidEntryPoint
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseFragment() {
     private lateinit var binding: FragmentProfileBinding
     private val viewModel: ProfileViewModel by viewModels()
 
@@ -54,7 +55,10 @@ class ProfileFragment : Fragment() {
     private fun onViewState(state: ProfileViewState?) {
         when(state) {
             is ProfileViewState.MoviesRated -> {
-                moviesRatedUser.submitList(state.moviesRated)
+                if (state.moviesRated.isNotEmpty())
+                    moviesRatedUser.submitList(state.moviesRated)
+                else
+                    showError(getString(R.string.message_error))
             }
             is ProfileViewState.Profile -> {
                 binding.ivProfile.loadImageUrl("${Constants.BASE_POSTER_IMAGE_URL}${state.profile?.avatar}")
@@ -62,6 +66,9 @@ class ProfileFragment : Fragment() {
                 binding.tvUserName.text = "@${state.profile?.username}"
             }
             null -> {}
+            is ProfileViewState.Error -> {
+                showError(state.error)
+            }
         }
     }
 }

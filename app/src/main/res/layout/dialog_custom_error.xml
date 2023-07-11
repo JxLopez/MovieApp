@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationError"
+        android:layout_width="@dimen/card_width_general"
+        android:layout_height="@dimen/card_width_general"
+        android:layout_centerHorizontal="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/error" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvError"
+        style="@style/Text.Subtitle.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/animationError"
+        android:layout_marginTop="@dimen/text_size_big"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOk"
+        style="@style/Button.IconStyle.Primary"
+        android:layout_marginTop="@dimen/text_size_big"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ok"
+        android:layout_below="@+id/tvError"
+        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginBottom="@dimen/space_extra_large"
+        android:layout_marginEnd="@dimen/space_large" />
+
+</RelativeLayout>

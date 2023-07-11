@@ -62,7 +62,8 @@ tools:context=".ui.movie.MoviesFragment">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contentBackdrop"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="@dimen/height_header_content"
+            android:layout_marginTop="@dimen/margin_default"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleWelcome"
             app:layout_constraintStart_toStartOf="parent">
 

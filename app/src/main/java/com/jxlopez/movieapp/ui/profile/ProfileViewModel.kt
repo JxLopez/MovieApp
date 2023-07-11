@@ -44,4 +44,5 @@ class ProfileViewModel @Inject constructor(
 sealed class ProfileViewState {
     class Profile(val profile: ProfileItem?) : ProfileViewState()
     class MoviesRated(val moviesRated: List<MovieRatedByUserItem>) : ProfileViewState()
+    class Error(val error: String) : ProfileViewState()
 }

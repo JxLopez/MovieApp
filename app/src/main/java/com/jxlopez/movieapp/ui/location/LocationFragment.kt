@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +30,7 @@ import com.jxlopez.movieapp.util.Constants.LocationService.ACTION_START_OR_RESUM
 import com.jxlopez.movieapp.util.Constants.LocationService.ACTION_STOP_SERVICE
 import com.jxlopez.movieapp.util.Constants.LocationService.REQUEST_CODE_LOCATION_PERMISSION
 import com.jxlopez.movieapp.util.PermissionsUtility
+import com.jxlopez.movieapp.util.components.BaseFragment
 import com.jxlopez.movieapp.util.extensions.bitmapDescriptorFromVector
 import com.jxlopez.movieapp.util.extensions.observe
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +38,7 @@ import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
 @AndroidEntryPoint
-class LocationFragment : Fragment(), EasyPermissions.PermissionCallbacks {
+class LocationFragment : BaseFragment(), EasyPermissions.PermissionCallbacks {
     private lateinit var binding: FragmentLocationBinding
     private val viewModel: LocationViewModel by viewModels()
     private val markerOptions = MarkerOptions()
@@ -294,14 +294,18 @@ class LocationFragment : Fragment(), EasyPermissions.PermissionCallbacks {
         when(state) {
             is LocationViewState.Locations -> {
                 listLocations = state.locations
-                locationAdapter.submitList(state.locations)
-                if(this::map.isInitialized) {
-                    binding.recyclerMaps.adapter = locationAdapter
-                    addMarkers()
-                    validateSelectMarker()
+                if(state.locations.isNotEmpty()) {
+                    locationAdapter.submitList(state.locations)
+                    if (this::map.isInitialized) {
+                        binding.recyclerMaps.adapter = locationAdapter
+                        addMarkers()
+                        validateSelectMarker()
+                    }
+                } else {
+                    showError(getString(R.string.message_error_locations))
                 }
             }
-            null -> TODO()
+            null -> {}
         }
 
     }
