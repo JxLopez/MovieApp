@@ -4,6 +4,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.firestore.ktx.persistentCacheSettings
 import com.google.firebase.storage.FirebaseStorage
+import com.jxlopez.movieapp.BuildConfig
 import com.jxlopez.movieapp.data.api.ApiService
 import com.jxlopez.movieapp.data.datasource.local.MovieLocalDataSource
 import com.jxlopez.movieapp.data.datasource.local.MovieLocalDataSourceImpl
@@ -39,7 +40,7 @@ import javax.inject.Singleton
 object AppModule {
 
     @Provides
-    fun provideBaseUrl() = Constants.BASE_URL
+    fun provideBaseUrl() = BuildConfig.TMDB_URL
 
     @Singleton
     @Provides
@@ -49,10 +50,14 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(@Named("logging") httpLoggingInterceptor: Interceptor) =
+    fun provideOkHttpClient(@Named("logging") httpLoggingInterceptor: Interceptor) = if(BuildConfig.DEBUG) {
         OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
             .build()
+    } else {
+        OkHttpClient.Builder()
+            .build()
+    }
 
     @Singleton
     @Provides
